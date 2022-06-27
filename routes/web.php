@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,16 @@ Route::get('/', function () {
 
 Route::get('/post', function () {
     return response()->json([
-        'posts' => \App\Models\Post::all(),
+        'posts' => Post::all(),
+    ]);
+});
+
+Route::post('/post/search', function () {
+    $posts = Post::where('title', 'like', '%' . request()->q . '%')
+        ->orWhere('content', 'like', '%' . request()->q . '%')
+        ->get();
+
+    return response()->json([
+        'posts' => $posts,
     ]);
 });

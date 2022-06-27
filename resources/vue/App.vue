@@ -2,14 +2,20 @@
     <div id="appWrapper" class="">
         <div class="container">
             <div class="search-box">
-                <input class="search-input" type="text" placeholder="Search...">
-                <ul class="result-list show">
-                    <li v-for="x in 10" class="resulti-item">
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search..."
+                    v-model="title"
+                    @input="search()">
+                <ul
+                    class="result-list"
+                    :class="resultSearch">
+
+                    <li v-for="(post, index) in posts" class="resulti-item">
                         <a href="a" class="result-link">
-                            <div class="result-title">Name</div>
-                            <div class="result-content">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            </div>
+                            <div class="result-title">{{ post.title }}</div>
+                            <div class="result-content">{{ post.content.substr(1,40) }}</div>
                         </a>
                     </li>
                 </ul>
@@ -25,13 +31,32 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            text: 'Hello world!',
-        }
+    export default {
+        data() {
+            return {
+                title: '',
+            }
+        },
+        computed: {
+            resultSearch() {
+                return (this.title.length > 0) ? 'show' : 'hide';
+            }
+        },
+        methods: {
+            search() {
+                if(this.title.length >= 3) {
+                    axios.post('/post/search', {
+                        q: this.title
+                    }).then( res => {
+                        this.posts = res.data.posts
+                        console.log(res)
+                    }).catch( error => {
+                        console.log(error.response)
+                    })
+                }
+            }
+        },
     }
-}
 </script>
 
 <style>

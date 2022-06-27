@@ -19590,8 +19590,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      text: 'Hello world!'
+      title: ''
     };
+  },
+  computed: {
+    resultSearch: function resultSearch() {
+      return this.title.length > 0 ? 'show' : 'hide';
+    }
+  },
+  methods: {
+    search: function search() {
+      var _this = this;
+
+      if (this.title.length >= 3) {
+        axios.post('/post/search', {
+          q: this.title
+        }).then(function (res) {
+          _this.posts = res.data.posts;
+          console.log(res);
+        })["catch"](function (error) {
+          console.log(error.response);
+        });
+      }
+    }
   }
 });
 
@@ -37257,7 +37278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _App_vue_vue_type_template_id_6e43a170_bindings_text_data___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=6e43a170&bindings={"text":"data"} */ "./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"text\":\"data\"}");
+/* harmony import */ var _App_vue_vue_type_template_id_6e43a170_bindings_title_data_resultSearch_options_search_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=6e43a170&bindings={"title":"data","resultSearch":"options","search":"options"} */ "./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"title\":\"data\",\"resultSearch\":\"options\",\"search\":\"options\"}");
 /* harmony import */ var _App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js */ "./resources/vue/App.vue?vue&type=script&lang=js");
 /* harmony import */ var _App_vue_vue_type_style_index_0_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue?vue&type=style&index=0&lang=css */ "./resources/vue/App.vue?vue&type=style&index=0&lang=css");
 
@@ -37265,7 +37286,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 ;
-_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].render = _App_vue_vue_type_template_id_6e43a170_bindings_text_data___WEBPACK_IMPORTED_MODULE_0__.render
+_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].render = _App_vue_vue_type_template_id_6e43a170_bindings_title_data_resultSearch_options_search_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
 
@@ -37304,26 +37325,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"text\":\"data\"}":
-/*!**************************************************************************************!*\
-  !*** ./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={"text":"data"} ***!
-  \**************************************************************************************/
+/***/ "./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"title\":\"data\",\"resultSearch\":\"options\",\"search\":\"options\"}":
+/*!***********************************************************************************************************************************!*\
+  !*** ./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={"title":"data","resultSearch":"options","search":"options"} ***!
+  \***********************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_template_id_6e43a170_bindings_text_data___WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_template_id_6e43a170_bindings_title_data_resultSearch_options_search_options___WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_template_id_6e43a170_bindings_text_data___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=template&id=6e43a170&bindings={"text":"data"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"text\":\"data\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_template_id_6e43a170_bindings_title_data_resultSearch_options_search_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=template&id=6e43a170&bindings={"title":"data","resultSearch":"options","search":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"title\":\"data\",\"resultSearch\":\"options\",\"search\":\"options\"}");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"text\":\"data\"}":
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={"text":"data"} ***!
-  \***********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={\"title\":\"data\",\"resultSearch\":\"options\",\"search\":\"options\"}":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/vue/App.vue?vue&type=template&id=6e43a170&bindings={"title":"data","resultSearch":"options","search":"options"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37340,37 +37361,42 @@ const _hoisted_1 = {
 }
 const _hoisted_2 = { class: "container" }
 const _hoisted_3 = { class: "search-box" }
-const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  class: "search-input",
-  type: "text",
-  placeholder: "Search..."
-}, null, -1 /* HOISTED */)
-const _hoisted_5 = { class: "result-list show" }
-const _hoisted_6 = { class: "resulti-item" }
-const _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+const _hoisted_4 = { class: "resulti-item" }
+const _hoisted_5 = {
   href: "a",
   class: "result-link"
-}, [
-  /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", { class: "result-title" }, "Name"),
-  /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", { class: "result-content" }, " Lorem ipsum dolor sit amet consectetur, adipisicing elit. ")
-], -1 /* HOISTED */)
-const _hoisted_8 = [
-  _hoisted_7
-]
-const _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo saepe doloremque inventore iusto perspiciatis laudantium fuga, quia possimus quis similique vel suscipit! Similique nisi reprehenderit voluptate sapiente deserunt reiciendis eaque? ", -1 /* HOISTED */)
+}
+const _hoisted_6 = { class: "result-title" }
+const _hoisted_7 = { class: "result-content" }
+const _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo saepe doloremque inventore iusto perspiciatis laudantium fuga, quia possimus quis similique vel suscipit! Similique nisi reprehenderit voluptate sapiente deserunt reiciendis eaque? ", -1 /* HOISTED */)
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [
-        _hoisted_4,
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_5, [
-          ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(10, (x) => {
-            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, _hoisted_8)
-          }), 64 /* STABLE_FRAGMENT */))
-        ])
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+          class: "search-input",
+          type: "text",
+          placeholder: "Search...",
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => (($data.title) = $event)),
+          onInput: _cache[1] || (_cache[1] = $event => ($options.search()))
+        }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [
+          [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.title]
+        ]),
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+          class: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["result-list", $options.resultSearch])
+        }, [
+          ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.posts, (post, index) => {
+            return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_4, [
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_5, [
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(post.title), 1 /* TEXT */),
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(post.content.substr(1,40)), 1 /* TEXT */)
+              ])
+            ]))
+          }), 256 /* UNKEYED_FRAGMENT */))
+        ], 2 /* CLASS */)
       ]),
-      _hoisted_9
+      _hoisted_8
     ])
   ]))
 }
